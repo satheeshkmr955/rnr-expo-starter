@@ -1,0 +1,136 @@
+- [ ] @expo/metro-runtime
+- [ ] react-native-svg-transformer
+- [ ] nativewind
+- [ ] tailwind-variants == ~CVA~
+- [ ] react-native-svg
+- [ ] react-native-edge-to-edge
+- [ ] @gorhom/bottom-sheet => expo-modal
+- [ ] @tanstack/react-query
+- [ ] react-query-kit
+- [ ] zustand
+- [ ] axios
+- [ ] reactotron-redux
+- [ ] react-hook-form
+- [ ] @hookform/resolvers
+- [ ] zod
+- [ ] moti => react-native-reanimated v4
+- [ ] @shopify/flash-list
+- [ ] i18next
+- [ ] react-i18next
+- [ ] expo-localization
+- [ ] react-native-mmkv
+- [ ] expo-crypto
+- [ ] react-native-url-polyfill
+- [ ] react-native-keyboard-controller
+- [ ] @react-native-community/netinfo
+- [ ] react-native-restart
+- [ ] react-error-boundary
+- [ ] @react-native-firebase/app
+- [ ] @react-native-firebase/messaging
+- [ ] @notifee/react-native
+- [ ] app-icon-badge
+- [ ] react-native-flash-message => toastify-react-native
+- [ ] expo-constants
+- [ ] expo-dev-client
+- [ ] expo-font
+- [ ] expo-image
+- [ ] react-native-gesture-handler
+- [ ] expo-haptics ~
+- [ ] expo-symbols ~
+- [ ] expo-web-browser ~
+- [ ] expo-auth-session ~
+- [ ] @expo/vector-icons ~
+- [ ] @react-navigation/bottom-tabs ~
+- [ ] @react-navigation/elements ~
+- [ ] @react-navigation/native ~
+- [ ] include issue tracking
+- expo
+- expo-constants
+- expo-dev-client
+- expo-font
+- expo-image
+- expo-linking
+- expo-router
+- expo-splash-screen
+- expo-status-bar
+- expo-system-ui
+- lodash.memoize
+- react
+- react-dom
+- react-native
+
+---
+
+# dev-dependencies
+
+- [ ] @babel/core
+- [ ] @commitlint/cli
+- [ ] @commitlint/config-conventional
+- [ ] @dev-plugins/react-query
+- [ ] @eslint/eslintrc
+- [ ] @eslint/js
+- [ ] @expo/config
+- [ ] @testing-library/jest-dom
+- [ ] @testing-library/react-native
+- [ ] @types/i18n-js
+- [ ] @types/invariant
+- [ ] @types/jest
+- [ ] @types/lodash.memoize
+- [ ] @typescript-eslint/eslint-plugin
+- [ ] @typescript-eslint/parser
+- [ ] babel-plugin-module-resolver
+- [ ] cross-env
+- [ ] dotenv
+- [ ] eslint-config-prettier
+- [ ] eslint-import-resolver-typescript
+- [ ] eslint-plugin-i18n-json
+- [ ] eslint-plugin-import
+- [ ] eslint-plugin-prettier
+- [ ] eslint-plugin-react-compiler
+- [ ] eslint-plugin-simple-import-sort
+- [ ] eslint-plugin-tailwindcss
+- [ ] eslint-plugin-testing-library
+- [ ] eslint-plugin-unicorn
+- [ ] eslint-plugin-unused-imports
+- [ ] husky
+- [ ] jest
+- [ ] jest-environment-jsdom
+- [ ] jest-expo
+- [ ] jest-junit
+- [ ] lint-staged
+- [ ] np
+- [ ] prettier
+- [ ] tailwindcss
+- [ ] ts-jest
+- [ ] typescript-eslint
+- @types/react
+- eslint
+- eslint-config-expo
+- typescript
+
+---
+
+# scripts
+
+- expo-doctor
+- lint
+- install-maestro
+
+## to be added if needed
+
+- @react-native-firebase/analytics
+- react-native-webview
+- react-native-web
+- @react-native-firebase/remote-config
+- @react-native-firebase/crashlytics
+- @react-native-firebase/in-app-messaging
+- xstate
+- @react-native-cookies/cookies
+- react-native-responsive-screen
+- react-native-blob-util
+<!-- - react-native-paper modal -->
+- @sentry/react-native
+- papaparse
+- react-native-device-info
+- @react-native-async-storage/async-storage
+- react-native-razorpay
