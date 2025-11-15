@@ -1,40 +1,42 @@
-- [ ] @expo/metro-runtime
-- [ ] react-native-svg-transformer
-- [ ] nativewind
-- [ ] tailwind-variants == ~CVA~
-- [ ] react-native-svg
-- [ ] react-native-edge-to-edge
-- [ ] @gorhom/bottom-sheet => expo-modal
-- [ ] @tanstack/react-query
-- [ ] react-query-kit
+- [x] tailwind-variants == ~CVA~
+- [x] @tanstack/react-query
+- [x] react-query-kit
+- [x] axios
 - [ ] zustand
-- [ ] axios
 - [ ] reactotron-redux
 - [ ] react-hook-form
 - [ ] @hookform/resolvers
 - [ ] zod
-- [ ] moti => react-native-reanimated v4
-- [ ] @shopify/flash-list
+- [x] @shopify/flash-list
 - [ ] i18next
 - [ ] react-i18next
 - [ ] expo-localization
 - [ ] react-native-mmkv
 - [ ] expo-crypto
 - [ ] react-native-url-polyfill
-- [ ] react-native-keyboard-controller
+- [x] react-native-keyboard-controller
 - [ ] @react-native-community/netinfo
 - [ ] react-native-restart
 - [ ] react-error-boundary
 - [ ] @react-native-firebase/app
 - [ ] @react-native-firebase/messaging
 - [ ] @notifee/react-native
-- [ ] app-icon-badge
-- [ ] react-native-flash-message => toastify-react-native
+- [x] toastify-react-native
 - [ ] expo-constants
-- [ ] expo-dev-client
 - [ ] expo-font
-- [ ] expo-image
-- [ ] react-native-gesture-handler
+- [x] expo-image
+- [ ] @gorhom/bottom-sheet => rnr-dialog
+- [x] @react-navigation/drawer
+- [x] expo-dev-client
+- [x] react-native-gesture-handler
+- [x] react-native-svg
+- [x] nativewind
+- [ ] app-icon-badge ~
+- [ ] moti => react-native-reanimated v4 ~
+- [ ] react-native-edge-to-edge ~
+- [ ] react-native-svg-transformer ~
+- [ ] lodash.memoize
+- [ ] @expo/metro-runtime ~
 - [ ] expo-haptics ~
 - [ ] expo-symbols ~
 - [ ] expo-web-browser ~
@@ -44,20 +46,6 @@
 - [ ] @react-navigation/elements ~
 - [ ] @react-navigation/native ~
 - [ ] include issue tracking
-- expo
-- expo-constants
-- expo-dev-client
-- expo-font
-- expo-image
-- expo-linking
-- expo-router
-- expo-splash-screen
-- expo-status-bar
-- expo-system-ui
-- lodash.memoize
-- react
-- react-dom
-- react-native
 
 ---
 
