@@ -1,13 +1,18 @@
 import { View } from 'react-native';
 
-import { usePostById, usePostByUserId, usePosts, useUpdatePostById } from '@/features/posts/hooks';
 import { Text } from '@/components/ui/text';
 import { Button } from '@/components/ui/button';
 
+import { usePostById, usePostByUserId, usePosts, useUpdatePostById } from '@/features/posts/hooks';
+import { usePostsStore } from '@/features/posts/store/usePostStore';
+import { Post } from '@/features/posts/types';
+
 export const PostsScreen = () => {
   const { data: postsData, isLoading: postsIsLoading, error: postsError } = usePosts();
-
   console.log('posts', postsData, postsIsLoading, postsError, usePosts.getKey());
+
+  const { posts, setPost } = usePostsStore((state) => state);
+  console.log('poststore', posts);
 
   const variablesPostById = { postId: '1' };
   const {
@@ -15,7 +20,6 @@ export const PostsScreen = () => {
     isLoading: postByIdIsLoading,
     error: postByIdError,
   } = usePostById({ variables: variablesPostById });
-
   console.log(
     'postById',
     postByIdData,
@@ -30,7 +34,6 @@ export const PostsScreen = () => {
     isLoading: postByUserIdIsLoading,
     error: postByUserIdError,
   } = usePostByUserId({ variables: variablesPostByUserId });
-
   console.log(
     'postByUserId',
     postByUserIdData,
@@ -56,6 +59,7 @@ export const PostsScreen = () => {
       },
     };
     mutate(variables);
+    setPost(postByIdData as Post);
   };
 
   return (

@@ -2,8 +2,9 @@
 - [x] @tanstack/react-query
 - [x] react-query-kit
 - [x] axios
-- [ ] zustand
-- [ ] reactotron-redux
+- [x] zustand
+- [x] react-native-mmkv
+- [x] reactotron-redux
 - [ ] react-hook-form
 - [ ] @hookform/resolvers
 - [ ] zod
@@ -11,19 +12,23 @@
 - [ ] i18next
 - [ ] react-i18next
 - [ ] expo-localization
-- [ ] react-native-mmkv
 - [ ] expo-crypto
 - [ ] react-native-url-polyfill
 - [x] react-native-keyboard-controller
 - [ ] @react-native-community/netinfo
 - [ ] react-native-restart
-- [ ] react-error-boundary
+- [x] react-error-boundary => error-boundary from expo
 - [ ] @react-native-firebase/app
 - [ ] @react-native-firebase/messaging
 - [ ] @notifee/react-native
 - [x] toastify-react-native
 - [ ] expo-constants
 - [ ] expo-font
+- [ ] navigation setup
+- [ ] deeplinking setup
+- [ ] notification setup
+- [ ] global modal
+- [ ] toast setup
 - [x] expo-image
 - [ ] @gorhom/bottom-sheet => rnr-dialog
 - [x] @react-navigation/drawer

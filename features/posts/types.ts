@@ -7,6 +7,8 @@ export interface Post {
   body: string;
 }
 
+export type PostUpdate = Partial<Post>;
+
 export type PostByIdVariables = { postId: string };
 
 export type PostByUserIdVariables = { queryString: string };

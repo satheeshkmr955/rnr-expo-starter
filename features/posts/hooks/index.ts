@@ -1,13 +1,13 @@
 import { createMutation, createQuery } from 'react-query-kit';
 
-import { getPostById, getPosts, getPostsByUserId, updatePostById } from '../services/api';
+import { getPostById, getPosts, getPostsByUserId, updatePostById } from '@/features/posts/services/api';
 import {
   Post,
   Posts,
   PostByIdVariables,
   UpdatePostByIdVariables,
   PostByUserIdVariables,
-} from '../types';
+} from '@/features/posts/types';
 
 export const usePosts = createQuery<Posts>({
   queryKey: ['POSTS_API'],

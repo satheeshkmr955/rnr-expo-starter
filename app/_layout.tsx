@@ -3,11 +3,16 @@ import { PortalHost } from '@rn-primitives/portal';
 import { Stack } from 'expo-router';
 import { useColorScheme } from 'nativewind';
 import { StatusBar } from 'expo-status-bar';
+import { Platform } from 'react-native';
 
 import { NAV_THEME } from '@/lib/theme';
 import { TanStackQueryProvider } from '@/lib/TanStackQueryProvider';
 
 import '@/global.css';
+
+if ((Platform.OS === 'ios' || Platform.OS === 'android') && __DEV__) {
+  require('@/utils/ReactotronConfig');
+}
 
 export {
   // Catch any errors thrown by the Layout component.

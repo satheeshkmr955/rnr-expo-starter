@@ -1,6 +1,6 @@
 import { axiosInstance } from '@/lib/axios';
 import { POSTS_API } from '@/constants/api';
-import { Post } from '../types';
+import { Post } from '@/features/posts/types';
 
 export const getPosts = async () => {
   try {
