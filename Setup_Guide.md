@@ -15,7 +15,7 @@
 - [ ] expo-crypto
 - [ ] react-native-url-polyfill
 - [x] react-native-keyboard-controller
-- [ ] @react-native-community/netinfo
+- [x] @react-native-community/netinfo
 - [ ] react-native-restart
 - [x] react-error-boundary => error-boundary from expo
 - [ ] @react-native-firebase/app
@@ -29,6 +29,7 @@
 - [ ] notification setup
 - [ ] global modal
 - [ ] toast setup
+- [ ] theme-setup-dynamically
 - [x] expo-image
 - [ ] @gorhom/bottom-sheet => rnr-dialog
 - [x] @react-navigation/drawer
