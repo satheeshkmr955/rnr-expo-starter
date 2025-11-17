@@ -11,8 +11,8 @@ export const PostsScreen = () => {
   const { data: postsData, isLoading: postsIsLoading, error: postsError } = usePosts();
   console.log('posts', postsData, postsIsLoading, postsError, usePosts.getKey());
 
-  const { posts, setPost } = usePostsStore((state) => state);
-  console.log('poststore', posts);
+  const { post, setPost } = usePostsStore((state) => state);
+  console.log('poststore', post);
 
   const variablesPostById = { postId: '1' };
   const {

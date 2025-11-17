@@ -26,50 +26,52 @@ const initialState: PostsState = {
 };
 
 export const usePostsStore = create<PostsStore>()(
-  persist(
-    immer((set) => ({
-      ...initialState,
+  immer(
+    persist(
+      (set) => ({
+        ...initialState,
 
-      setPosts(posts) {
-        set((state) => {
-          state.posts = posts;
-        });
-      },
+        setPosts(posts) {
+          set((state) => {
+            state.posts = posts;
+          });
+        },
 
-      removePosts() {
-        set((state) => {
-          state.posts = [];
-        });
-      },
+        removePosts() {
+          set((state) => {
+            state.posts = [];
+          });
+        },
 
-      setPost(post) {
-        set((state) => {
-          state.post = post;
-        });
-      },
+        setPost(post) {
+          set((state) => {
+            state.post = post;
+          });
+        },
 
-      removePost() {
-        set((state) => {
-          state.post = null;
-        });
-      },
+        removePost() {
+          set((state) => {
+            state.post = null;
+          });
+        },
 
-      updatePost(post) {
-        set((state) => {
-          if (state.post) {
-            state.post = { ...state.post, ...post };
-          } else {
-            state.post = post as Post;
-          }
-        });
-      },
-    })),
-    {
-      name: 'posts-storage',
-      storage: createMMKVStorage(),
-      skipHydration: true,
-      // Optional: whitelist or blacklist keys to persist
-      // partialize: (state) => ({ post: state.post }),
-    }
+        updatePost(post) {
+          set((state) => {
+            if (state.post) {
+              state.post = { ...state.post, ...post };
+            } else {
+              state.post = post as Post;
+            }
+          });
+        },
+      }),
+      {
+        name: 'posts-storage',
+        storage: createMMKVStorage(),
+        // skipHydration: true,
+        // Optional: whitelist or blacklist keys to persist
+        // partialize: (state) => ({ post: state.post }),
+      }
+    )
   )
 );
