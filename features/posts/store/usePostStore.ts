@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
 import { createMMKVStorage } from '@/utils/mmkv-storage';
@@ -26,9 +26,9 @@ const initialState: PostsState = {
 };
 
 export const usePostsStore = create<PostsStore>()(
-  immer(
-    persist(
-      (set) => ({
+  persist(
+    devtools(
+      immer((set) => ({
         ...initialState,
 
         setPosts(posts) {
@@ -64,14 +64,14 @@ export const usePostsStore = create<PostsStore>()(
             }
           });
         },
-      }),
-      {
-        name: 'posts-storage',
-        storage: createMMKVStorage(),
-        // skipHydration: true,
-        // Optional: whitelist or blacklist keys to persist
-        // partialize: (state) => ({ post: state.post }),
-      }
-    )
+      }))
+    ),
+    {
+      name: 'posts-storage',
+      storage: createMMKVStorage(),
+      // skipHydration: true,
+      // Optional: whitelist or blacklist keys to persist
+      // partialize: (state) => ({ post: state.post }),
+    }
   )
 );

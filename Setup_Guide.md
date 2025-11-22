@@ -28,7 +28,7 @@
 - [ ] deeplinking setup
 - [ ] notification setup
 - [ ] global modal
-- [ ] toast setup
+- [x] toast setup
 - [ ] theme-setup-dynamically
 - [x] expo-image
 - [ ] @gorhom/bottom-sheet => rnr-dialog
