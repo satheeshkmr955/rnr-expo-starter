@@ -5,14 +5,17 @@ import { Stack } from 'expo-router';
 import { useColorScheme } from 'nativewind';
 import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 import { NAV_THEME } from '@/lib/theme';
 import { TanStackQueryProvider } from '@/lib/TanStackQueryProvider';
+import { GlobalModalWrapper } from '@/lib/GlobalModalWrapper';
+import { ToastError, ToastInfo, ToastSuccess, ToastWarn } from '@/components/ui/customToast';
 
 import '@/global.css';
 
-import { ToastError, ToastInfo, ToastSuccess, ToastWarn } from '@/components/ui/customToast';
-import { ToastConfigParams } from 'toastify-react-native/utils/interfaces';
+import type { ToastConfigParams } from 'toastify-react-native/utils/interfaces';
 
 if ((Platform.OS === 'ios' || Platform.OS === 'android') && __DEV__) {
   require('@/utils/ReactotronConfig');
@@ -42,9 +45,14 @@ export default function RootLayout() {
         translucent
       />
       <TanStackQueryProvider>
-        <Stack />
-        <PortalHost />
-        <ToastManager config={toastConfig} position="top" duration={1500} useModal={false} />
+        <GestureHandlerRootView>
+          <BottomSheetModalProvider>
+            <Stack />
+            <PortalHost />
+            <ToastManager config={toastConfig} position="top" duration={1500} useModal={false} />
+            <GlobalModalWrapper />
+          </BottomSheetModalProvider>
+        </GestureHandlerRootView>
       </TanStackQueryProvider>
     </ThemeProvider>
   );

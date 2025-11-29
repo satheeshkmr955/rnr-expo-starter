@@ -3,6 +3,7 @@ import reactotronZustand from 'reactotron-plugin-zustand';
 import mmkvPlugin from 'reactotron-react-native-mmkv';
 
 import { usePostsStore } from '@/features/posts/store/usePostStore';
+import { useModalStore } from '@/store/useModalStore';
 
 import { storage } from '@/utils/mmkv-storage';
 
@@ -21,7 +22,10 @@ const reactotron = Reactotron.configure({
   })
   .use(
     reactotronZustand({
-      stores: [{ name: 'posts', store: usePostsStore }],
+      stores: [
+        { name: 'posts', store: usePostsStore },
+        { name: 'modals', store: useModalStore },
+      ],
       omitFunctionKeys: true,
     })
   )

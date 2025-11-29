@@ -5,9 +5,14 @@ import { Button } from '@/components/ui/button';
 
 import { usePostById, usePostByUserId, usePosts, useUpdatePostById } from '@/features/posts/hooks';
 import { usePostsStore } from '@/features/posts/store/usePostStore';
-import { Post } from '@/features/posts/types';
+import { useModalStore } from '@/store/useModalStore';
+import { MODAL_TYPE } from '@/lib/modalRegistry';
+
+import type { Post } from '@/features/posts/types';
 
 export const PostsScreen = () => {
+  const { openModal } = useModalStore((state) => state);
+
   const { data: postsData, isLoading: postsIsLoading, error: postsError } = usePosts();
   console.log('posts', postsData, postsIsLoading, postsError, usePosts.getKey());
 
@@ -62,6 +67,13 @@ export const PostsScreen = () => {
     setPost(postByIdData as Post);
   };
 
+  const openModalExample = () => {
+    openModal({
+      modalType: MODAL_TYPE.EXAMPLE_MODAL,
+      modalProps: {},
+    });
+  };
+
   return (
     <View>
       <Text>posts</Text>
@@ -69,6 +81,12 @@ export const PostsScreen = () => {
         <View>
           <Text>Update</Text>
         </View>
+      </Button>
+      <Button
+        variant="ghost"
+        className="mx-2 mt-2 border border-primary"
+        onPress={() => openModalExample()}>
+        <Text>Open</Text>
       </Button>
     </View>
   );

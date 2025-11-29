@@ -22,16 +22,17 @@
 - [ ] @react-native-firebase/messaging
 - [ ] @notifee/react-native
 - [x] toastify-react-native
+- [ ] @gorhom/bottom-sheet => rnr-dialog
+- [ ] react-compiler - remove useMemo, etc
 - [ ] expo-constants
 - [ ] expo-font
 - [ ] navigation setup
 - [ ] deeplinking setup
 - [ ] notification setup
-- [ ] global modal
+- [ ] global modal setup
 - [x] toast setup
 - [ ] theme-setup-dynamically
 - [x] expo-image
-- [ ] @gorhom/bottom-sheet => rnr-dialog
 - [x] @react-navigation/drawer
 - [x] expo-dev-client
 - [x] react-native-gesture-handler
