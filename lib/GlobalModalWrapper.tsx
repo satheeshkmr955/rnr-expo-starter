@@ -7,22 +7,27 @@ export const GlobalModalWrapper = () => {
 
   return (
     <>
-      {modals.map((obj, index) => {
+      {modals.map((obj) => {
         const { modalId = '', modalType = '', modalProps = {} } = obj || {};
 
-        const ModalComponent = modalRegistry[modalType];
+        const { ModalComponent = null, defaultModalProps = {} } = modalRegistry[modalType] || {};
+
+        const combinedModalProps = {
+          ...defaultModalProps,
+          ...modalProps,
+        };
 
         if (!ModalComponent) return null;
 
         return (
           <BottomSheetModal
-            {...modalProps}
+            {...combinedModalProps}
             key={modalId}
             id={modalId}
             modalType={modalType}
             modalId={modalId}>
             <ModalComponent
-              {...modalProps}
+              {...combinedModalProps}
               key={modalId}
               id={modalId}
               modalType={modalType}

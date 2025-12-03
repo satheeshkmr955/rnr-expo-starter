@@ -5,39 +5,41 @@
 - [x] zustand
 - [x] react-native-mmkv
 - [x] reactotron-redux
-- [ ] react-hook-form
-- [ ] @hookform/resolvers
-- [ ] zod
-- [x] @shopify/flash-list
-- [ ] i18next
-- [ ] react-i18next
-- [ ] expo-localization
-- [ ] expo-crypto
-- [ ] react-native-url-polyfill
 - [x] react-native-keyboard-controller
 - [x] @react-native-community/netinfo
-- [ ] react-native-restart
 - [x] react-error-boundary => error-boundary from expo
-- [ ] @react-native-firebase/app
-- [ ] @react-native-firebase/messaging
-- [ ] @notifee/react-native
+- [x] @shopify/flash-list
 - [x] toastify-react-native
-- [ ] @gorhom/bottom-sheet => rnr-dialog
-- [ ] react-compiler - remove useMemo, etc
-- [ ] expo-constants
-- [ ] expo-font
-- [ ] navigation setup
-- [ ] deeplinking setup
-- [ ] notification setup
-- [ ] global modal setup
-- [x] toast setup
-- [ ] theme-setup-dynamically
+- [x] @gorhom/bottom-sheet
+  - [x] dismiss onclick of outside of modal
+  - [x] Example Modal props how to pass to BottomSheetModal
 - [x] expo-image
 - [x] @react-navigation/drawer
 - [x] expo-dev-client
 - [x] react-native-gesture-handler
 - [x] react-native-svg
 - [x] nativewind
+- [x] toast setup
+- [x] global modal setup
+- [ ] @react-native-firebase/app
+- [ ] @react-native-firebase/messaging
+- [ ] @notifee/react-native
+- [ ] notification setup
+- [ ] navigation setup
+- [ ] deeplinking setup
+- [ ] theme-setup-dynamically
+- [ ] react-hook-form
+- [ ] @hookform/resolvers
+- [ ] zod
+- [ ] i18next
+- [ ] react-i18next
+- [ ] expo-localization
+- [ ] expo-crypto
+- [ ] react-native-url-polyfill
+- [ ] react-native-restart
+- [ ] react-compiler - remove useMemo, etc
+- [ ] expo-constants
+- [ ] expo-font
 - [ ] app-icon-badge ~
 - [ ] moti => react-native-reanimated v4 ~
 - [ ] react-native-edge-to-edge ~

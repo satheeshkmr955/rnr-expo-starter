@@ -2,7 +2,11 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import tw from 'twrnc';
 import { XIcon } from 'lucide-react-native';
-import { BottomSheetModal as DefaultBottomSheetModal } from '@gorhom/bottom-sheet';
+import {
+  BottomSheetBackdrop,
+  BottomSheetBackdropProps,
+  BottomSheetModal as DefaultBottomSheetModal,
+} from '@gorhom/bottom-sheet';
 
 import { useModalStore } from '@/store/useModalStore';
 
@@ -42,15 +46,27 @@ export const BottomSheetModal = (props: BottomSheetModalProps) => {
     bottomSheetModalRef.current?.dismiss();
   }, []);
 
+  const renderBackdrop = useCallback(
+    (props: BottomSheetBackdropProps) => (
+      <BottomSheetBackdrop
+        {...props}
+        pressBehavior="close"
+        appearsOnIndex={0}
+        disappearsOnIndex={-1}
+      />
+    ),
+    []
+  );
+
   return (
     <DefaultBottomSheetModal
       onChange={onChangeHandler}
       snapPoints={[height]}
-      index={0}
+      enableDynamicSizing={false}
       enablePanDownToClose={true}
       stackBehavior="push"
-      backgroundStyle={tw`bg-red-400`}
       handleComponent={() => <Handle closeModal={closeModalHandler} />}
+      backdropComponent={renderBackdrop}
       {...props}
       ref={bottomSheetModalRef}>
       {props.children}
