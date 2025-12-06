@@ -14,3 +14,5 @@ export type PostByIdVariables = { postId: string };
 export type PostByUserIdVariables = { queryString?: string };
 
 export type UpdatePostByIdVariables = { postId: string; body: Post };
+
+export type QueryUserByIdArgs = { input: number };

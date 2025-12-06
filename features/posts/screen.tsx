@@ -3,7 +3,13 @@ import { View } from 'react-native';
 import { Text } from '@/components/ui/text';
 import { Button } from '@/components/ui/button';
 
-import { usePostById, usePostByUserId, usePosts, useUpdatePostById } from '@/features/posts/hooks';
+import {
+  usePostById,
+  usePostByUserId,
+  usePosts,
+  useUpdatePostById,
+} from '@/features/posts/hooks/api';
+import { useCreatePost, useUserById } from '@/features/posts/hooks/graphql';
 import { usePostsStore } from '@/features/posts/store/usePostStore';
 import { useModalStore } from '@/store/useModalStore';
 import { MODAL_TYPE } from '@/lib/modalRegistry';
@@ -12,6 +18,13 @@ import type { Post } from '@/features/posts/types';
 
 export const PostsScreen = () => {
   const { openModal } = useModalStore((state) => state);
+
+  const {
+    data: userData,
+    isLoading: userIsLoading,
+    error: userError,
+  } = useUserById({ variables: { input: 1 } });
+  console.log('user', userData, userIsLoading, userError, useUserById.getKey());
 
   const { data: postsData, isLoading: postsIsLoading, error: postsError } = usePosts();
   console.log('posts', postsData, postsIsLoading, postsError, usePosts.getKey());
@@ -47,14 +60,20 @@ export const PostsScreen = () => {
     usePostByUserId.getKey(variablesPostByUserId)
   );
 
-  const { mutate } = useUpdatePostById({
+  const { mutate: updatePostByIdMutate } = useUpdatePostById({
     onSettled: (data, error, body) => {
-      console.log('onSettled', data, error, body, useUpdatePostById.getKey());
+      console.log('useUpdatePostById onSettled', data, error, body, useUpdatePostById.getKey());
+    },
+  });
+
+  const { mutate: createPostMutate } = useCreatePost({
+    onSettled: (data, error, body) => {
+      console.log('useCreatePost onSettled', data, error, body, useCreatePost.getKey());
     },
   });
 
   const onPressUpdateHandler = () => {
-    const variables = {
+    const updatePostByIdVariables = {
       postId: '2',
       body: {
         userId: 3,
@@ -63,7 +82,15 @@ export const PostsScreen = () => {
         body: 'body updated',
       },
     };
-    mutate(variables);
+    updatePostByIdMutate(updatePostByIdVariables);
+    const createPostVariables = {
+      input: {
+        title: 'title 2',
+        body: 'body 2',
+        userId: 1,
+      },
+    };
+    createPostMutate(createPostVariables);
     setPost(postByIdData as Post);
   };
 

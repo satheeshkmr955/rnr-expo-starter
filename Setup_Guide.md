@@ -21,6 +21,8 @@
 - [x] nativewind
 - [x] toast setup
 - [x] global modal setup
+- [x] graphql api setup
+  - [x] https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
 - [ ] @react-native-firebase/app
 - [ ] @react-native-firebase/messaging
 - [ ] @notifee/react-native
@@ -28,6 +30,7 @@
 - [ ] navigation setup
 - [ ] deeplinking setup
 - [ ] theme-setup-dynamically
+- [ ] logger
 - [ ] react-hook-form
 - [ ] @hookform/resolvers
 - [ ] zod
@@ -44,7 +47,7 @@
 - [ ] moti => react-native-reanimated v4 ~
 - [ ] react-native-edge-to-edge ~
 - [ ] react-native-svg-transformer ~
-- [ ] lodash.memoize
+- [ ] lodash.memoize ~
 - [ ] @expo/metro-runtime ~
 - [ ] expo-haptics ~
 - [ ] expo-symbols ~

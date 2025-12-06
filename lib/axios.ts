@@ -31,3 +31,35 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export const axiosGraphQL = axios.create({
+  baseURL: `https://graphqlplaceholder.vercel.app/graphql/`,
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    // Referer: 'https://graphqlplaceholder.vercel.app/graphql/',
+    // Origin: 'https://graphqlplaceholder.vercel.app/graphql/',
+  },
+});
+
+// Request Interceptor
+axiosGraphQL.interceptors.request.use(
+  async (config) => {
+    return config;
+  },
+  (error) => {
+    console.error('Request Error:', error);
+    return Promise.reject(error);
+  }
+);
+
+// Response Interceptor
+axiosGraphQL.interceptors.response.use(
+  async (response) => {
+    return response;
+  },
+  (error) => {
+    console.error('Response Error:', error);
+    return Promise.reject(error);
+  }
+);

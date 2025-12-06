@@ -3,10 +3,13 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
+    "dev-all": "concurrently \"bun run codegen-watch\" \"bun run dev\"",
     "dev": "expo start -c",
     "android": "expo start -c --android",
     "ios": "expo start -c --ios",
     "web": "expo start -c --web",
+    "codegen": "graphql-codegen --config codegen.ts --verbose",
+    "codegen-watch": "graphql-codegen --watch --config codegen.ts --verbose",
     "clean": "rm -rf .expo node_modules"
   },
   "dependencies": {
@@ -23,6 +26,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "expo": "^54.0.0",
+    "expo-clipboard": "~8.0.8",
     "expo-dev-client": "~6.0.17",
     "expo-image": "~3.0.10",
     "expo-linear-gradient": "~15.0.7",
@@ -59,10 +63,20 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@0no-co/graphqlsp": "^1.15.1",
     "@babel/core": "^7.26.0",
+    "@graphql-codegen/cli": "^6.1.0",
+    "@graphql-codegen/client-preset": "^5.2.1",
+    "@graphql-codegen/introspection": "^5.0.0",
+    "@graphql-codegen/schema-ast": "^5.0.0",
+    "@graphql-codegen/typescript": "^5.0.6",
+    "@graphql-codegen/typescript-resolvers": "^5.1.4",
+    "@parcel/watcher": "^2.5.1",
     "@types/react": "~19.1.10",
+    "concurrently": "^9.2.1",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "react-native-react-query-devtools": "^1.5.1",
     "react-native-svg-transformer": "^1.5.2",
     "reactotron-plugin-zustand": "^2.0.8",
     "reactotron-react-native": "^5.1.18",

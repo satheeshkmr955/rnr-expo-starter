@@ -1,0 +1,103 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Address {
+  city: String
+  geo: Geo
+  street: String
+  suite: String
+  zipcode: String
+}
+
+type Album {
+  id: Int!
+  photos(first: Int): [Photo]
+  title: String
+  user: User
+}
+
+type Comment {
+  body: String
+  email: String
+  id: Int!
+  name: String
+  post: Post
+}
+
+type Company {
+  bs: String
+  catchPhrase: String
+  name: String
+}
+
+input CreatePostInput {
+  body: String!
+  title: String!
+  userId: Int!
+}
+
+type Geo {
+  lat: String
+  lng: String
+}
+
+type Mutation {
+  createPost(post: CreatePostInput!): Post
+  deletePost(postId: Int!): String
+  updatePost(post: UpdatePostInput!, postId: Int!): Post
+}
+
+type Photo {
+  album: Album
+  id: Int!
+  thumbnailUrl: String
+  title: String
+  url: String
+}
+
+type Post {
+  body: String
+  comments(first: Int): [Comment]
+  id: Int!
+  title: String
+  user: User
+}
+
+type Query {
+  albums(albumId: Int, first: Int, userId: Int): [Album]
+  comments(commentId: Int, first: Int, postId: Int): [Comment]
+  photos(albumId: Int, first: Int, photoId: Int): [Photo]
+  posts(first: Int, postId: Int, userId: Int): [Post]
+  todos(first: Int, todoId: Int, userId: Int): [Todo]
+  userById(id: Int!): User
+  users(first: Int, userId: Int): [User]
+}
+
+type Todo {
+  completed: Boolean
+  id: Int!
+  title: String
+  user: User
+}
+
+input UpdatePostInput {
+  body: String
+  title: String
+  userId: Int
+}
+
+type User {
+  address: Address
+  albums(first: Int): [Album]
+  company: Company
+  email: String
+  id: Int!
+  name: String
+  phone: String
+  posts(first: Int): [Post]
+  todos(first: Int): [Todo]
+  username: String
+  website: String
+}

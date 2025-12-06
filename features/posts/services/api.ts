@@ -1,6 +1,6 @@
 import { axiosInstance } from '@/lib/axios';
 import { POSTS_API } from '@/constants/api';
-import { Post } from '@/features/posts/types';
+import { Post, PostByUserIdVariables } from '@/features/posts/types';
 
 export const getPosts = async () => {
   try {
@@ -13,7 +13,7 @@ export const getPosts = async () => {
   }
 };
 
-export const getPostsByUserId = async ({ queryString }: { queryString: string }) => {
+export const getPostsByUserId = async ({ queryString }: PostByUserIdVariables) => {
   try {
     const response = await axiosInstance.get(`${POSTS_API}?${queryString}`);
     // console.log('POSTS_API response', response);
